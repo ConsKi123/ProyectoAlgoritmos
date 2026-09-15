@@ -34,12 +34,31 @@ namespace Nuevo
 		}
 	
 		public int altura() {
-			return 0;
+			if (this.esHoja()){
+				return 0;
+				}
+			int mayor = 0;
+			foreach(ArbolGeneral<t> hijo in this.getHijos()){
+				int alturaHijos = hijo.altura();
+				if(alturaHijo > mayor){
+					mayor = alturaHijo;
+				}
+			}
+			return mayor+1;
 		}
 	
 		
 		public int nivel(T dato) {
-			return 0;
+			if(((Icomparable)this.dato).CompareTo(dato)==0){
+				return;
+			}
+			foreach(ArbolGeneral<T>hijo in this.getHijos()){
+				int nivelhijo = hijonivel(dato);
+				if (nivelHijo !=-1){
+					return nivelhijo+1;
+				}
+			}
+			return-1;
 		}
 	
 	}
