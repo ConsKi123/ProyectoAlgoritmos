@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace tp2
+namespace Nuevo
 {
 	public class ArbolGeneral<T>
 	{
