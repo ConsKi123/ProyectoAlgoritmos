@@ -73,7 +73,11 @@ namespace tpfinal
                 resultado.Add(arbol.getDatoRaiz());
             }
 
-            
+        foreach (ArbolGeneral<ItemCat> hijo in arbol.getHijos())
+           {
+            BuscarRecursivo(hijo, elementoABuscar, resultado);
+           }   
+
         }
             
     }
