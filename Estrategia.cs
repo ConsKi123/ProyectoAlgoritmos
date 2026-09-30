@@ -54,12 +54,28 @@ namespace tpfinal
 
         public void Agregar(ArbolGeneral<ItemCat> arbol, ItemCat dato, string rutaAlPadre)
 		{
-             //string[] segmentos = (rutaAlpadre).split('/');
+             string[] segmentos = (rutaAlpadre).split('/');
 
-             //int i = 0
-             //if (segmentos.Length > 0){
-                //segmentos[0].Equals(arbol.getDatoRaiz().Nombre)
-                //}
+             int inicio = 0
+             if (segmentos.Length > 0){
+            	if segmentos[0].Equals(arbol.getDatoRaiz().Nombre){
+					inicio = 1;
+				}
+             }
+			ArbolGeneral<ItemCat> actual = arbol;
+			for(int i = inicio; i< segment.Lenght; i++){
+				ArbolGeneral<ItemCat> siguiente = null;
+				foreach (ArbolGeneral<ItemCat> hijo in actual.gethijos()){
+					if (hijo.getdatoRaiz().Nombre.Equals(segmentos[i])){
+						siguiente = hijo;
+						break;
+				}
+			}
+			if (siguiente == null){
+				siguiente = new ArbolGeneral<ItemCat>(new ItemCat(segmentos[i], TipoElemento.Categoria));
+				actual.agregarHijo(siguiente);
+			}
+			actual = siguiente;
 
         }
 
