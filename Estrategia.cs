@@ -33,7 +33,23 @@ namespace tpfinal
 
         public List<ItemCat> Todos(ArbolGeneral<ItemCat> arbol)
         {
-            return  [];
+            List<ItemCat> resultado = new List<ItemCat>();
+
+            RecorrerTodos(arbol, resultado); //metodo auxiliar que recorre el arbol y 
+            //agrega todo lo que encuentre a la lista
+
+            return  resultado;
+        }
+
+        private void RecorrerTodos(ArbolGeneral<ItemCat> arbol, List<ItemCat> resultado)
+        {
+            resultado.Add(arbol.getDatoRaiz()); //Agregamos el elemento del nodo actual
+
+            foreach(ArbolGeneral<ItemCat> hijo in arbol.GetHijos()) //Recorremos los hijos de ese nodo 
+            {
+                RecorrerTodos(hijo, resultado);
+            }
+
         }
 
         public void Agregar(ArbolGeneral<ItemCat> arbol, ItemCat dato, string rutaAlPadre)
@@ -43,8 +59,22 @@ namespace tpfinal
 
         public List<ItemCat> Buscar(ArbolGeneral<ItemCat> arbol, string elementoABuscar)
 		{
-			return [];
+            List<ItemCat> resultado = new List<ItemCat>();
+
+            BuscarRecursivo(arbol, elementoABuscar, resultado); //metodo auxiliar
+
+			return resultado;
 		}
+
+        private void BuscarRecursivo(ArbolGeneral<ItemCat> arbol, string elementoABuscar, List<ItemCat> resultado)
+        {
+            if(arbol.getDatoRaiz().Nombre.Contains(elementoABuscar))
+            {
+                resultado.Add(arbol.getDatoRaiz());
+            }
+
+            
+        }
             
     }
 }
