@@ -54,7 +54,13 @@ namespace tpfinal
 
         public void Agregar(ArbolGeneral<ItemCat> arbol, ItemCat dato, string rutaAlPadre)
 		{
-            //implementar
+             //string[] segmentos = (rutaAlpadre).split('/');
+
+             //int i = 0
+             //if (segmentos.Length > 0){
+                //segmentos[0].Equals(arbol.getDatoRaiz().Nombre)
+                //}
+
         }
 
         public List<ItemCat> Buscar(ArbolGeneral<ItemCat> arbol, string elementoABuscar)
