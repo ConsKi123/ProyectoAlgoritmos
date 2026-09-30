@@ -39,7 +39,7 @@ namespace Nuevo
 				}
 			int mayor = 0;
 			foreach(ArbolGeneral<t> hijo in this.getHijos()){
-				int alturaHijos = hijo.altura();
+				int alturaHijo = hijo.altura();
 				if(alturaHijo > mayor){
 					mayor = alturaHijo;
 				}
@@ -49,11 +49,11 @@ namespace Nuevo
 	
 		
 		public int nivel(T dato) {
-			if(((Icomparable)this.dato).CompareTo(dato)==0){
-				return;
+			if(((IComparable)this.dato).CompareTo(dato)==0){
+				return 0;
 			}
 			foreach(ArbolGeneral<T>hijo in this.getHijos()){
-				int nivelhijo = hijonivel(dato);
+				int nivelhijo = hijo.nivel(dato);
 				if (nivelHijo !=-1){
 					return nivelhijo+1;
 				}
