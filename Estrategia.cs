@@ -56,27 +56,37 @@ namespace tpfinal
 		{
              string[] segmentos = (rutaAlpadre).split('/');
 
-             int inicio = 0
-             if (segmentos.Length > 0){
-            	if segmentos[0].Equals(arbol.getDatoRaiz().Nombre){
+             int inicio = 0;
+             if (segmentos.Length > 0)
+             {
+            	if (segmentos[0].Equals(arbol.getDatoRaiz().Nombre))
+                {
 					inicio = 1;
 				}
              }
 			ArbolGeneral<ItemCat> actual = arbol;
-			for(int i = inicio; i< segment.Lenght; i++){
+
+			for(int i = inicio; i< segment.Lenght; i++)
+            {
 				ArbolGeneral<ItemCat> siguiente = null;
-				foreach (ArbolGeneral<ItemCat> hijo in actual.gethijos()){
-					if (hijo.getdatoRaiz().Nombre.Equals(segmentos[i])){
-						siguiente = hijo;
-						break;
+
+			foreach (ArbolGeneral<ItemCat> hijo in actual.gethijos())
+            {
+				if (hijo.getdatoRaiz().Nombre.Equals(segmentos[i]))
+                {
+					siguiente = hijo;
+					break;
 				}
 			}
-			if (siguiente == null){
+			if (siguiente == null)
+            {
 				siguiente = new ArbolGeneral<ItemCat>(new ItemCat(segmentos[i], TipoElemento.Categoria));
 				actual.agregarHijo(siguiente);
 			}
+
 			actual = siguiente;
 		 }
+          actual.agregarhijo(new ArbolGeneral<ItemCat>(dato));
 			
 		}
 
