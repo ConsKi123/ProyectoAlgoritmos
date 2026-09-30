@@ -76,8 +76,9 @@ namespace tpfinal
 				actual.agregarHijo(siguiente);
 			}
 			actual = siguiente;
-
-        }
+		 }
+			
+		}
 
         public List<ItemCat> Buscar(ArbolGeneral<ItemCat> arbol, string elementoABuscar)
 		{
