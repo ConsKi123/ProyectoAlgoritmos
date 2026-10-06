@@ -63,12 +63,12 @@ namespace tpfinal
                 {
 					inicio = 1;
 				}
-             }
+             }  //vemos cantidad de segmentos
 			ArbolGeneral<ItemCat> actual = arbol;
 
-			for(int i = inicio; i< segment.Lenght; i++)
+			for(int i = inicio; i< segment.Lenght; i++) //si cantidad de segmentos > valor de inicio, recorre
             {
-				ArbolGeneral<ItemCat> siguiente = null;
+				ArbolGeneral<ItemCat> siguiente = null;   //auxiliar
 
 			foreach (ArbolGeneral<ItemCat> hijo in actual.gethijos())
             {
@@ -78,7 +78,7 @@ namespace tpfinal
 					break;
 				}
 			}
-			if (siguiente == null)
+			if (siguiente == null)   //si siguiente no cuenta con dato, crea un nuevo Arbol
             {
 				siguiente = new ArbolGeneral<ItemCat>(new ItemCat(segmentos[i], TipoElemento.Categoria));
 				actual.agregarHijo(siguiente);
