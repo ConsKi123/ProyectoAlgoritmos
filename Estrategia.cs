@@ -45,7 +45,7 @@ namespace tpfinal
         {
             resultado.Add(arbol.getDatoRaiz()); //Agregamos el elemento del nodo actual
 
-            foreach(ArbolGeneral<ItemCat> hijo in arbol.GetHijos()) //Recorremos los hijos de ese nodo 
+            foreach(ArbolGeneral<ItemCat> hijo in arbol.getHijos()) //Recorremos los hijos de ese nodo 
             {
                 RecorrerTodos(hijo, resultado);
             }
@@ -54,8 +54,7 @@ namespace tpfinal
 
         public void Agregar(ArbolGeneral<ItemCat> arbol, ItemCat dato, string rutaAlPadre)
 		{
-             string[] segmentos = (rutaAlpadre).split('/');
-
+             string[] segmentos = rutaAlPadre.Split('/');
              int inicio = 0;
              if (segmentos.Length > 0)
              {
@@ -66,13 +65,13 @@ namespace tpfinal
              }  //vemos cantidad de segmentos
 			ArbolGeneral<ItemCat> actual = arbol;
 
-			for(int i = inicio; i< segment.Lenght; i++) //si cantidad de segmentos > valor de inicio, recorre
+			for(int i = inicio; i < segmentos.Length; i++) //si cantidad de segmentos > valor de inicio, recorre
             {
 				ArbolGeneral<ItemCat> siguiente = null;   //auxiliar
 
-			foreach (ArbolGeneral<ItemCat> hijo in actual.gethijos())
+			foreach (ArbolGeneral<ItemCat> hijo in actual.getHijos())
             {
-				if (hijo.getdatoRaiz().Nombre.Equals(segmentos[i]))
+				if (hijo.getDatoRaiz().Nombre.Equals(segmentos[i]))
                 {
 					siguiente = hijo;
 					break;
@@ -86,7 +85,7 @@ namespace tpfinal
 
 			actual = siguiente;
 		 }
-          actual.agregarhijo(new ArbolGeneral<ItemCat>(dato));
+          actual.agregarHijo(new ArbolGeneral<ItemCat>(dato));
 			
 		}
 
