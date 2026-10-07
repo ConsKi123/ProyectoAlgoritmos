@@ -18,7 +18,7 @@ namespace tpfinal
 
         private string BuscarUrlPorIdRecursivo(ArbolGeneral<ItemCat> nodo, string rutaActual, int idBuscado)
         {
-            string nuevaRuta = $"{rutaActual}/{nodo.getDatoRaiz().Nombre.ToLower()}";
+            string nuevaRuta = rutaActual + "/" + nodo.getDatoRaiz().Nombre.ToLower();
 
             if (nodo.getDatoRaiz().Id == idBuscado)
             {
