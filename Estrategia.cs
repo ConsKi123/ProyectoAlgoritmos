@@ -13,7 +13,7 @@ namespace tpfinal
 		
 		public string GetUrlSeoPorId(ArbolGeneral<ItemCat> arbol, int id)
         {
-            return BuscarUrlPorIdRecursivo(arbol, "tienda.com", id);
+            return BuscarUrlPorIdRecursivo(arbol, "tienda.com", id); // Inicia la búsqueda recursiva desde la raíz
         }
 
         private string BuscarUrlPorIdRecursivo(ArbolGeneral<ItemCat> nodo, string rutaActual, int idBuscado)
@@ -27,8 +27,8 @@ namespace tpfinal
 
             foreach (var hijo in nodo.getHijos())
             {
-                string urlEncontrada = BuscarUrlPorIdRecursivo(hijo, nuevaRuta, idBuscado);
-                if (urlEncontrada != null) return urlEncontrada;
+                string urlEncontrada = BuscarUrlPorIdRecursivo(hijo, nuevaRuta, idBuscado); // Llama recursivamente para cada hijo
+                if (urlEncontrada != null) return urlEncontrada; // Si se encontró la URL en esta rama, la retorna inmediatamente
             }
 
             return null;
