@@ -8,7 +8,6 @@ C:\Users\norbe\ProyectoAlgoritmos\obj\Debug\net8.0\ProyectoAlgoritmos.MvcApplica
 C:\Users\norbe\ProyectoAlgoritmos\obj\Debug\net8.0\ProyectoAlgoritmos.sourcelink.json
 C:\Users\norbe\ProyectoAlgoritmos\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\norbe\ProyectoAlgoritmos\bin\Debug\net8.0\appsettings.json
-C:\Users\norbe\ProyectoAlgoritmos\bin\Debug\net8.0\launchSettings.json
 C:\Users\norbe\ProyectoAlgoritmos\bin\Debug\net8.0\ProyectoAlgoritmos.exe
 C:\Users\norbe\ProyectoAlgoritmos\bin\Debug\net8.0\ProyectoAlgoritmos.deps.json
 C:\Users\norbe\ProyectoAlgoritmos\bin\Debug\net8.0\ProyectoAlgoritmos.runtimeconfig.json
