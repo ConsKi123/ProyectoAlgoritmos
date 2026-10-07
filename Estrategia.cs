@@ -13,7 +13,25 @@ namespace tpfinal
 		
 		public string GetUrlSeoPorId(ArbolGeneral<ItemCat> arbol, int id)
         {
-            return "Implementar";
+            return BuscarUrlPorIdRecursivo(arbol, "tienda.com", id);
+        }
+
+        private string BuscarUrlPorIdRecursivo(ArbolGeneral<ItemCat> nodo, string rutaActual, int idBuscado)
+        {
+            string nuevaRuta = $"{rutaActual}/{nodo.getDatoRaiz().Nombre.ToLower()}";
+
+            if (nodo.getDatoRaiz().Id == idBuscado)
+            {
+                return nuevaRuta;
+            }
+
+            foreach (var hijo in nodo.getHijos())
+            {
+                string urlEncontrada = BuscarUrlPorIdRecursivo(hijo, nuevaRuta, idBuscado);
+                if (urlEncontrada != null) return urlEncontrada;
+            }
+
+            return null;
         }
         
 
