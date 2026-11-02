@@ -35,14 +35,31 @@ namespace tpfinal
         }
         
 
-        public List<string> GetURLsSEO(ArbolGeneral<ItemCat> arbol)
-		{
-			return ["Implementar"];
-		}
-        
-    
+    public List<string> GetURLsSEO(ArbolGeneral<ItemCat> arbol)
+	{
+			List<string> resultado = new List<string>();
 
-        public List<List<string>> ConsultaNiveles(ArbolGeneral<ItemCat> arbol)
+			RecorrerURLs(arbol, "tienda.com", resultado);
+
+			return resultado;
+	}
+
+	private void RecorrerURLs(ArbolGeneral<ItemCat> nodo, string rutaActual, List<string> resultado)
+	{
+		string nuevaRuta = rutaActual + "/" + nodo.getDatoRaiz().Nombre.ToLower();
+
+		if (nodo.esHoja())
+       {
+        resultado.Add(nuevaRuta);
+       }
+
+		foreach (ArbolGeneral<ItemCat> hijo in nodo.getHijos())
+       {
+        RecorrerURLs(hijo, nuevaRuta, resultado);
+       }
+	}	
+
+   public List<List<string>> ConsultaNiveles(ArbolGeneral<ItemCat> arbol)
 		{
             List<List<string>> niveles = new List<List<string>>();
 			Cola<ArbolGeneral<ItemCat>> cola = new Cola<ArbolGeneral<ItemCat>>();
