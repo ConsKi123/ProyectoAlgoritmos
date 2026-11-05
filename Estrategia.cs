@@ -65,17 +65,22 @@ namespace tpfinal
 			Cola<ArbolGeneral<ItemCat>> cola = new Cola<ArbolGeneral<ItemCat>>();
 			cola.encolar(arbol);
 
-			while(!cola.esVacia()){
-				int cantidadNivel = cola.cantidadElementos();
-				Lista<string> nivelActual = new List<string>();  //lista auxiliar para guardar nivel actual
+			while(!cola.esVacia())
+            {
+			int cantidadNivel = cola.cantidadElementos();
+			List<string> nivelActual = new List<string>();  //lista auxiliar para guardar nivel actual
 
-				for(int i = 0; i< cantidadNivel; i++){
-					ArbolGeneral<Itemcat> nodo = cola.desencolar();     //desencola el nodo actual
-					nivelActual.add(nodo.getDatoRaiz().Nombre);
-					foreach(ArbolGeneral<ItemCat> hijo in nodo.getHijos()){
-						cola.encolar(hijo);    //encola el nuevo hijo
-					}	
-				}
+			for(int i = 0; i< cantidadNivel; i++)
+            {
+			ArbolGeneral<ItemCat> nodo = cola.desencolar(); //desencola el nodo actual
+
+			nivelActual.Add(nodo.getDatoRaiz().Nombre);
+
+			foreach(ArbolGeneral<ItemCat> hijo in nodo.getHijos())
+                {
+					cola.encolar(hijo); //encola el nuevo hijo
+				}	
+			}
 				niveles.Add(nivelActual);
 			}
 			return niveles;
